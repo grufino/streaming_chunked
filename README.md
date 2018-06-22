@@ -24,3 +24,17 @@ Then:
 --upon a `GET` request to either of the two it must respond with contents of a corresponding table serialized as CSV and using HTTP chunked encoding. Data must be streamed from the database upon a request, not stored in a file or cached in memory
 
 All the transactions used Streams to give a better performance and support greater amounts of data.
+
+
+# How to run
+The app can be run by Elixir's cli IEX, here's an example:
+
+```streaming_chunked git:(master) ✗ iex -S mix
+Erlang/OTP 20 [erts-9.2.1] [source] [64-bit] [smp:4:4] [ds:4:4:10] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
+
+Interactive Elixir (1.6.1) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)> StreamingChunked.Pipeline.run_pipeline()
+inserting into source
+copying source into dest
+initializing server
+{:ok, #PID<0.203.0>}
