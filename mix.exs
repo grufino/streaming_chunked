@@ -21,7 +21,9 @@ defmodule StreamingChunked.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:postgrex, "~> 0.13.4"}
+      {:postgrex, "~> 0.13.4"},
+      {:cowboy, "~> 1.0"},
+      {:plug, "~> 1.0"}
     ]
   end
 end

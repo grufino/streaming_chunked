@@ -1,7 +1,11 @@
 {application,streaming_chunked,
-             [{applications,[kernel,stdlib,elixir,logger]},
+             [{applications,[kernel,stdlib,elixir,postgrex,logger,cowboy,
+                             plug]},
               {description,"streaming_chunked"},
-              {modules,['Elixir.StreamingChunked']},
+              {modules,['Elixir.StreamingChunked.ManageDbConn',
+                        'Elixir.StreamingChunked.Pipeline',
+                        'Elixir.StreamingChunked.PrepareDataBase',
+                        'Elixir.StreamingChunked.Server']},
               {registered,[]},
               {vsn,"0.1.0"},
-              {extra_applications,[logger]}]}.
+              {extra_applications,[postgrex,logger]}]}.
