@@ -1,8 +1,8 @@
 defmodule StreamingChunked.Pipeline do
 
   alias StreamingChunked.PrepareDataBase
-  alias StreamingChunked.Server
   alias StreamingChunked.ManageDbConn
+  alias StreamingChunked.Server
 
   def run_pipeline() do
     {:ok, foo_pid} = ManageDbConn.create_conn("foo")
@@ -26,6 +26,6 @@ defmodule StreamingChunked.Pipeline do
   end
 
   def start_server() do
-    {:ok, _} = Plug.Adapters.Cowboy.http(Server, [])
+    Supervisor.init([{Server, []}], strategy: :one_for_one)
   end
 end

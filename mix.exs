@@ -23,7 +23,8 @@ defmodule StreamingChunked.MixProject do
     [
       {:postgrex, "~> 0.13.4"},
       {:cowboy, "~> 1.0"},
-      {:plug, "~> 1.0"}
+      {:plug, "~> 1.0"},
+      {:ibrowse, "~>4.4.0"}
     ]
   end
 end

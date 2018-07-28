@@ -8,8 +8,8 @@ defmodule StreamingChunked.Server do
   plug(:match)
   plug(:dispatch)
 
-  def init(default_options) do
-    default_options
+  def child_spec(_opts) do
+    Plug.Adapters.Cowboy.http(__MODULE__, [])
   end
 
   get("/dbs/bar/tables/dest") do

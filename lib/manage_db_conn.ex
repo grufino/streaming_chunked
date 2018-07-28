@@ -2,7 +2,7 @@ defmodule StreamingChunked.ManageDbConn do
 
   @hostname "localhost"
   @username "postgres"
-  @password ""
+  @password "postgres"
 
   def create_conn(database) do
     Postgrex.start_link(hostname: @hostname, username: @username, password: @password, database: database)
